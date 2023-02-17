@@ -2,20 +2,23 @@
     color: black;
     font-family: sans-serif;
 }
-
+.rowbg{
+    background: url('/assets/img/7889361.jpg')  no-repeat;
+}
 .login_box{
    
      color: black;
      margin-top: 125px;
      margin-left: 300px;
      margin-right:300px;
-
-
+     
      ion-card{
         height: 350px;
         width: 100%;
+        // background: url('/assets/img/7889361.jpg');
+
         .usr{
-            padding-top:35px;
+            margin:35px;
             padding-left:20%;
             .us_size{
                 height: 80px;
@@ -27,8 +30,10 @@
         .bt2{
             padding-left: 100px;
         }
+
     }
 }
 .ioncontent::part(scroll){
-   background: url('/assets/img/7889361.jpg') repeat;
+   background: url('/assets/img/7889361.jpg')  no-repeat;
+   background-size: auto;
 }
