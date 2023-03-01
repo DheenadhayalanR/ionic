@@ -6,6 +6,11 @@ from .forms import PostSerializer
 def create_post(request):
     serializer = PostSerializer(data=request.data)
     if serializer.is_valid():
-        serializer.save()
+        a=serializer.save()
+        if a==serializer:
+            return Response("Already exist")
         return Response(serializer.data, status=201)
     return Response(serializer.errors, status=400)
+
+# @api_view(['GET'])
+# def read_product(request):
