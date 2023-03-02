@@ -1,6 +1,7 @@
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
-from .forms import PostSerializer
+from .serializer import PostSerializer
+from .models import Postm
 
 @api_view(['POST'])
 def create_post(request):
@@ -12,5 +13,8 @@ def create_post(request):
         return Response(serializer.data, status=201)
     return Response(serializer.errors, status=400)
 
-# @api_view(['GET'])
-# def read_product(request):
+@api_view(['GET'])
+def read_product(request):
+    Data=Postm.objects.all()
+    Data=PostSerializer(Data,many=True)
+    return Response(Data.data)

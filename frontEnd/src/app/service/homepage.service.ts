@@ -1,15 +1,25 @@
-import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
 })
-export class DataService {
-
+export class ApiService {
+  private apiUrl = 'http://localhost:8000';
+  data={
+    "id": 10,
+    "title": "ummmsaaaa",
+    "content": "gfgvvhgb",
+    "date_posted": "2023-03-01T10:33:05.860385Z"
+}
+ 
   constructor(private http: HttpClient) { }
 
-  getData() {
-    return this.http.get('http://127.0.0.1:8000/api/posts/');
+  public getItems() {
+    return this.http.get<any>(`${this.apiUrl}/read/`);
   }
-
+  public postItems() {
+    return this.http.post<any>(`${this.apiUrl}/api/posts/`,this.data);
+  }
 }
+

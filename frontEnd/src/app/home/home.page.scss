@@ -7,7 +7,9 @@
   top: 50%;
   transform: translateY(-50%);
 }
-
+html:not(.hydrated) body {
+  display: block;
+}
 #container strong {
   font-size: 20px;
   line-height: 26px;
