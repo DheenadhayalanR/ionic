@@ -41,30 +41,18 @@
 
 
 </ion-app> -->
-<ion-app>
 <ion-header>
   <ion-toolbar>
-    <ion-title>Create Product</ion-title>
+    <ion-title>
+      Ionic App
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-list>
-    <form (ngSubmit)="onSubmit()">
-      <ion-item>
-        <ion-label>Name</ion-label>
-        <ion-input [(ngModel)]="name" name="name" required></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label>Price</ion-label>
-        <ion-input type="number" [(ngModel)]="price" name="price" required></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label>Description</ion-label>
-        <ion-textarea [(ngModel)]="description" name="description" required></ion-textarea>
-      </ion-item>
-      <ion-button type="submit">Create</ion-button>
-    </form>
-  </ion-list>
+  <ion-card>
+    <ion-card-content>
+      <p>{{ data?.message }}</p>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
-</ion-app>
