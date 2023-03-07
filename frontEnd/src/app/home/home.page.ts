@@ -25,7 +25,7 @@ export class HomePage {
 
   ngOnInit() {
 
-    this.apiService.getItems().subscribe((data: any[]) => {
+    this.apiService.getItems().subscribe((data: any[]) => {  
         this.items = data;
     });
     this.apiService.postItems().subscribe((data: any[]) => {

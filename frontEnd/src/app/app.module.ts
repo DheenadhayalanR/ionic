@@ -15,8 +15,19 @@ import { CommonModule } from '@angular/common';
     AppComponent,
     HomePage
   ],
-  imports: [BrowserModule, CommonModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, HttpClientModule],
-  bootstrap: [AppComponent],
+  imports: [
+    BrowserModule,
+    CommonModule, 
+    IonicModule.forRoot(), 
+    AppRoutingModule, 
+    HttpClientModule
+  ],
+  providers: [
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, 
+    HttpClientModule
+  ],
+  bootstrap: [
+    AppComponent
+  ],
 })
 export class AppModule {}

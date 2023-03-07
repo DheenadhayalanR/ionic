@@ -7,8 +7,7 @@ import { Injectable } from '@angular/core';
 export class ApiService {
   private apiUrl = 'http://localhost:8000';
   data={
-    "id": 10,
-    "title": "ummmsaaaa",
+      "title": "ummmsaaaa",
     "content": "gfgvvhgb",
     "date_posted": "2023-03-01T10:33:05.860385Z"
 }
@@ -19,7 +18,7 @@ export class ApiService {
     return this.http.get<any>(`${this.apiUrl}/read/`);
   }
   public postItems() {
-    return this.http.post<any>(`${this.apiUrl}/api/posts/`,this.data);
+    return this.http.post<any>(`${this.apiUrl}/create/`,this.data);
   }
 }
 
