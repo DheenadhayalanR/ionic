@@ -18,3 +18,11 @@ def read_product(request):
     Data=Details.objects.all()
     Data=PostSerializer(Data,many=True)
     return Response(Data.data)
+
+@api_view(['PUT'])
+def update_product(request,pk):
+    Data=Details.objects.get(id=pk)
+    serializer=PostSerializer(instance=Data,data=request.data)
+    if serializer.is_valid():
+        serializer.save()
+    return Response(serializer.data)
