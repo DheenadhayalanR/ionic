@@ -26,3 +26,9 @@ def update_product(request,pk):
     if serializer.is_valid():
         serializer.save()
     return Response(serializer.data)
+
+@api_view(['DELETE'])
+def delete_product(request,pk):
+    Data=Details.objects.get(id=pk)
+    Data.delete()
+    return Response("Deleted")
